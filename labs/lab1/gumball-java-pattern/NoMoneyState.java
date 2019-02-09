@@ -14,22 +14,18 @@ public class NoMoneyState implements State {
     }
     
     public void insertNickel() {
-        gumballMachine.setMoney(5);
+        gumballMachine.setMoney(Constants.NICKEL);
         updateMoneyState();
     }
     
     public void insertDime() {
-        gumballMachine.setMoney(10);
+        gumballMachine.setMoney(Constants.DIME);
         updateMoneyState();
     }
     
     public void insertQuarter() {
-        gumballMachine.setMoney(25);
+        gumballMachine.setMoney(Constants.QUARTER);
         updateMoneyState();
-    }
-    
-    public void ejectQuarter() {
-        System.out.println("You haven't inserted a quarter");
     }
     
     public void ejectCoins() {
@@ -37,8 +33,8 @@ public class NoMoneyState implements State {
             System.out.println("You haven't inserted any coins");
         }
         else {
-            gumballMachine.setMoney(0);
-            System.out.println("Your coins are returned");
+            gumballMachine.setMoney(-gumballMachine.getMoney());
+            System.out.println("Your money is returned");
         }
     }
     

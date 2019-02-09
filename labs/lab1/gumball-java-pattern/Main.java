@@ -26,6 +26,7 @@ public class Main {
 	gumballMachine.insertNickel();
 	gumballMachine.insertQuarter();
 	gumballMachine.insertQuarter();
+	gumballMachine.ejectCoins();
 	gumballMachine.turnCrank();
 	
 	gumballMachine.insertQuarter();
@@ -35,6 +36,7 @@ public class Main {
 	System.out.println(gumballMachine);
 	
 	gumballMachine.insertQuarter();
+	gumballMachine.ejectCoins();
 	gumballMachine.insertQuarter();
 	gumballMachine.turnCrank();
 	

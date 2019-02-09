@@ -1,5 +1,3 @@
-
-
 import java.util.Random;
 
 public class HasMoneyState implements State {
@@ -25,25 +23,20 @@ public class HasMoneyState implements State {
     }
     
     public void insertNickel() {
-        updateMoneyState(5);
+        updateMoneyState(Constants.NICKEL);
     }
     
     public void insertDime() {
-        updateMoneyState(10);
+        updateMoneyState(Constants.DIME);
     }
     
     public void insertQuarter() {
-        updateMoneyState(25);
-    }
-    
-    public void ejectQuarter() {
-        System.out.println("Quarter returned");
-        gumballMachine.setState(gumballMachine.getNoMoneyState());
+        updateMoneyState(Constants.QUARTER);
     }
     
     public void ejectCoins() {
-        System.out.println("Your coins are returned");
-        gumballMachine.setMoney(0);
+        System.out.println("Your money is returned");
+        gumballMachine.setMoney(-gumballMachine.getMoney());
         gumballMachine.setState(gumballMachine.getNoMoneyState());
     }
     

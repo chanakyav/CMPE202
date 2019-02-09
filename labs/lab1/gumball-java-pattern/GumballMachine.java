@@ -34,10 +34,6 @@ public class GumballMachine {
         state.insertQuarter();
     }
     
-    public void ejectQuarter() {
-        state.ejectQuarter();
-    }
-    
     public void ejectCoins() {
         state.ejectCoins();
     }
@@ -55,7 +51,7 @@ public class GumballMachine {
         System.out.println("A gumball comes rolling out the slot...");
         if (count != 0) {
             count = count - 1;
-    }
+        }
     }
     
     int getCount() {

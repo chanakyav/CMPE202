@@ -8,7 +8,7 @@ public class SoldOutState implements State {
     }
     
     public void insertNickel() {
-        System.out.println("You can't insert a quarter, the machine is sold out");
+        System.out.println("You can't insert a coin, the machine is sold out");
     }
     
     public void insertDime() {

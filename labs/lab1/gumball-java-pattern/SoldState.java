@@ -23,6 +23,10 @@ public class SoldState implements State {
         System.out.println("Sorry, you already turned the crank");
     }
     
+    public void insertDollar() {
+        System.out.println("Sorry, you already turned the crank");
+    }
+    
     public void ejectCoins() {
         System.out.println("Sorry, you already turned the crank");
     }

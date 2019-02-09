@@ -35,10 +35,19 @@ public class Main {
 	
 	System.out.println(gumballMachine);
 	
+	for(int i=0; i<6; i++) gumballMachine.insertNickel();
 	gumballMachine.insertQuarter();
 	gumballMachine.ejectCoins();
+	
+	System.out.println(gumballMachine);
+	
+	gumballMachine.insertDollar();
+	gumballMachine.turnCrank();
+	
 	gumballMachine.insertQuarter();
 	gumballMachine.turnCrank();
+	
+	gumballMachine.refill(10);
 	
 	System.out.println(gumballMachine);
     }

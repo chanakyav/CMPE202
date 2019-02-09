@@ -13,12 +13,10 @@ public class HasMoneyState implements State {
         }
         else {
             gumballMachine.setMoney(value);
-            if (gumballMachine.getMoney() < 50) {
-                System.out.println("You inserted " + gumballMachine.getMoney() +
-                                   " cents in total. Add more money");
-            }
-            else System.out.println("You inserted " + gumballMachine.getMoney() +
-                                   " cents in total.");
+            String s = (gumballMachine.getMoney() < 50) ?
+                        " Add more money" : "";
+            System.out.println("You inserted " + gumballMachine.getMoney() +
+                           " cents in total." + s);
         }
     }
     
@@ -32,6 +30,10 @@ public class HasMoneyState implements State {
     
     public void insertQuarter() {
         updateMoneyState(Constants.QUARTER);
+    }
+    
+    public void insertDollar() {
+        updateMoneyState(Constants.DOLLAR);
     }
     
     public void ejectCoins() {

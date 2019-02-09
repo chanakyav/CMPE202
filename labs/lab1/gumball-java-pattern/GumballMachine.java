@@ -34,6 +34,10 @@ public class GumballMachine {
         state.insertQuarter();
     }
     
+    public void insertDollar() {
+        state.insertDollar();
+    }
+    
     public void ejectCoins() {
         state.ejectCoins();
     }

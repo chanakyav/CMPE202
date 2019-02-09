@@ -8,8 +8,9 @@ public class NoMoneyState implements State {
     }
     
     void updateMoneyState() {
+        String s = (gumballMachine.getMoney() < 50) ? " Add more money" : "";
         System.out.println("You inserted " + gumballMachine.getMoney() +
-                           " cents in total. Add more money");
+                           " cents in total." + s);
         gumballMachine.setState(gumballMachine.getHasMoneyState());
     }
     
@@ -25,6 +26,11 @@ public class NoMoneyState implements State {
     
     public void insertQuarter() {
         gumballMachine.setMoney(Constants.QUARTER);
+        updateMoneyState();
+    }
+    
+    public void insertDollar() {
+        gumballMachine.setMoney(Constants.DOLLAR);
         updateMoneyState();
     }
     

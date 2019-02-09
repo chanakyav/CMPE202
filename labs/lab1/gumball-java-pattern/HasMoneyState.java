@@ -10,8 +10,7 @@ public class HasMoneyState implements State {
     void updateMoneyState(int value) {
         if (gumballMachine.getMoney() >= 50) {
             System.out.println("You can't insert more coins");
-        }
-        else {
+        } else {
             gumballMachine.setMoney(value);
             String s = (gumballMachine.getMoney() < 50) ?
                         " Add more money" : "";
@@ -45,8 +44,7 @@ public class HasMoneyState implements State {
     public void turnCrank() {
         if (gumballMachine.getMoney() < 50) {
             System.out.println("You turned but you don't have enough money");
-        }
-        else {
+        } else {
             System.out.println("You turned...");
             gumballMachine.setMoney(-gumballMachine.getMoney());
             gumballMachine.setState(gumballMachine.getSoldState());
@@ -60,7 +58,6 @@ public class HasMoneyState implements State {
     public String toString() {
         if (gumballMachine.getMoney() < 50) {
             return "waiting for more coins";
-        }
-        else return "waiting for turn of crank";
+        } else return "waiting for turn of crank";
     }
 }

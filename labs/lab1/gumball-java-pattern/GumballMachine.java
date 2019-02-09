@@ -19,7 +19,7 @@ public class GumballMachine {
         this.count = numberGumballs;
         if (numberGumballs > 0) {
             state = noMoneyState;
-    } 
+        } 
     }
     
     public void insertNickel() {

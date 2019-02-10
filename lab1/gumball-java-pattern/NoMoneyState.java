@@ -1,5 +1,4 @@
 
-
 public class NoMoneyState implements State {
     GumballMachine gumballMachine;
  
@@ -7,20 +6,28 @@ public class NoMoneyState implements State {
         this.gumballMachine = gumballMachine;
     }
     
-    void updateMoneyState(int value) {
+    private void updateMoneyState(int value) {
         gumballMachine.setMoney(value);
-        String s = (gumballMachine.getMoney() < 50) ? " Add more money" : "";
+        String s = (gumballMachine.getMoney() < gumballMachine.getCost()) ? " Add more money" : "";
         System.out.println("You inserted " + gumballMachine.getMoney() +
                            " cents in total." + s);
         gumballMachine.setState(gumballMachine.getHasMoneyState());
     }
     
     public void insertNickel() {
-        updateMoneyState(Constants.NICKEL);
+        if (gumballMachine.getMachine() == 3) {
+            updateMoneyState(Constants.NICKEL);
+        } else {
+            System.out.println("Please insert a quarter");
+        }
     }
     
     public void insertDime() {
-        updateMoneyState(Constants.DIME);
+        if (gumballMachine.getMachine() == 3) {
+            updateMoneyState(Constants.DIME);
+        } else {
+            System.out.println("Please insert a quarter");
+        }
     }
     
     public void insertQuarter() {

@@ -19,10 +19,6 @@ public class SoldOutState implements State {
         System.out.println("You can't insert a coin, the machine is sold out");
     }
     
-    public void ejectQuarter() {
-        System.out.println("You can't eject, you haven't inserted a coin yet");
-    }
-    
     public void insertDollar() {
         System.out.println("You can't eject, you haven't inserted a coin yet");
     }

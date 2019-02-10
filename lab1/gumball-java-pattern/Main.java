@@ -1,9 +1,8 @@
 
-
 public class Main {
 
     public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine(5);
+        GumballMachine gumballMachine = new GumballMachine(5,Constants.MACH_ONE);
     
         System.out.println(gumballMachine);
 

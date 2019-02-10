@@ -1,4 +1,3 @@
-import java.util.Random;
 
 public class HasMoneyState implements State {
     GumballMachine gumballMachine;
@@ -7,24 +6,32 @@ public class HasMoneyState implements State {
         this.gumballMachine = gumballMachine;
     }
    
-    void updateMoneyState(int value) {
-        if (gumballMachine.getMoney() >= 50) {
+    private void updateMoneyState(int value) {
+        if (gumballMachine.getMoney() >= gumballMachine.getCost()) {
             System.out.println("You can't insert more coins");
         } else {
             gumballMachine.setMoney(value);
-            String s = (gumballMachine.getMoney() < 50) ?
+            String s = (gumballMachine.getMoney() < gumballMachine.getCost()) ?
                         " Add more money" : "";
             System.out.println("You inserted " + gumballMachine.getMoney() +
-                           " cents in total." + s);
+                               " cents in total." + s);
         }
     }
     
     public void insertNickel() {
-        updateMoneyState(Constants.NICKEL);
+        if (gumballMachine.getMachine() == 3) {
+            updateMoneyState(Constants.NICKEL);
+        } else {
+            System.out.println("Please insert a quarter");
+        }
     }
     
     public void insertDime() {
-        updateMoneyState(Constants.DIME);
+        if (gumballMachine.getMachine() == 3) {
+            updateMoneyState(Constants.DIME);
+        } else {
+            System.out.println("Please insert a quarter");
+        }
     }
     
     public void insertQuarter() {
@@ -42,8 +49,8 @@ public class HasMoneyState implements State {
     }
     
     public void turnCrank() {
-        if (gumballMachine.getMoney() < 50) {
-            System.out.println("You turned but you don't have enough money");
+        if (gumballMachine.getMoney() < gumballMachine.getCost()) {
+            System.out.println("You can't turn, you don't have enough money");
         } else {
             System.out.println("You turned...");
             gumballMachine.setMoney(-gumballMachine.getMoney());
@@ -56,7 +63,10 @@ public class HasMoneyState implements State {
     }
 
     public String toString() {
-        if (gumballMachine.getMoney() < 50) {
+        if (gumballMachine.getMachine() != 3) {
+            return "waiting for turn of crank";
+        }
+        else if (gumballMachine.getMoney() < gumballMachine.getCost()) {
             return "waiting for more coins";
         } else return "waiting for turn of crank";
     }

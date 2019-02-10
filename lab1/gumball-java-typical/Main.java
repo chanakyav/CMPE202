@@ -20,5 +20,7 @@ public class Main {
     	gumballMachine.turnCrank();
     	gumballMachine.insertCoin(5);
     	gumballMachine.turnCrank();
+    	gumballMachine.insertCoin(25);
+    	gumballMachine.turnCrank();
     }
 }

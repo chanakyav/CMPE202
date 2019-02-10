@@ -30,19 +30,14 @@ public class GumballMachine{
     public void turnCrank() {
         if (this.money != 0) {
             if (this.num_gumballs > 0) {               
-                if (this.machine == 1 && this.money == 25) giveGumball();
-                
-                else if (this.machine == 2 && this.money == 50) giveGumball();
-                //else System.out.println("Please insert a quarter");
-                
+                if (this.machine == 1 && this.money == 25) giveGumball();              
+                else if (this.machine == 2 && this.money == 50) giveGumball();                
                 else if (this.machine == 3 && this.money >= 50) giveGumball();
                 else System.out.println("Please insert another coin");
-            } else {
-                System.out.println("No More Gumballs! Sorry, can't return your money.");
-            }
-        } else {
-            System.out.println("Please insert a coin") ;
-        }         
+            } 
+            else System.out.println("No More Gumballs! Sorry, can't return your money.");
+        } 
+        else System.out.println("Please insert a coin") ;   
     }
    
     public void giveGumball() {

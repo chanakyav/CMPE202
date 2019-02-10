@@ -35,7 +35,11 @@ public class NoMoneyState implements State {
     }
     
     public void insertDollar() {
-        updateMoneyState(Constants.DOLLAR);
+        if (gumballMachine.getMachine() == 3) {
+            updateMoneyState(Constants.DOLLAR);
+        } else {
+            System.out.println("Please insert a quarter");
+        }
     }
     
     public void ejectCoins() {
@@ -54,7 +58,7 @@ public class NoMoneyState implements State {
     public void dispense() {
         System.out.println("You need to pay first");
     } 
-    
+
     public String toString() {
         return "waiting for coins";
     }

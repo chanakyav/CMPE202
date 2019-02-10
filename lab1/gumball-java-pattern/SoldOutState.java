@@ -35,6 +35,9 @@ public class SoldOutState implements State {
         System.out.println("No gumball dispensed");
     }
     
+    public void reset() {
+        System.out.println("Resetting to new machine");
+    }
     public String toString() {
         return "sold out";
     }

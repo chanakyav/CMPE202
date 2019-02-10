@@ -8,7 +8,6 @@ public class GumballMachine {
     
     State state = soldOutState;
     private int count = 0, money = 0, machine = 0, cost = 0;
-    private boolean reset = false;
     
     public GumballMachine(int numberGumballs, int machine) {
         soldOutState = new SoldOutState(this);
@@ -77,10 +76,6 @@ public class GumballMachine {
         return machine;
     }
     
-    boolean getReset() {
-        return reset;
-    }
-    
     void setMoney(int money) {
         this.money += money;
     }
@@ -88,8 +83,6 @@ public class GumballMachine {
     void setMachine(int machine) {
         if (machine >= 1 && machine <= 3 ) {
             this.machine = machine;
-            refill(count);
-            
         } else {
             System.out.println("Wrong machine type. Enter 1, 2, or 3");
             System.out.println("Setting default to machine 1");
@@ -105,11 +98,7 @@ public class GumballMachine {
             this.cost = Constants.COST_TYPE_2;
         }
     }
-    
-    void setReset(boolean value) {
-        this.reset = value;
-    }
-    
+
     void refill(int count) {
         this.count = count;
         state = noMoneyState;
@@ -145,6 +134,7 @@ public class GumballMachine {
         }
         result.append("\n");
         result.append("Machine is " + state + "\n");
+        result.append("Set to machine " + machine + "\n");
         return result.toString();
     }
 }

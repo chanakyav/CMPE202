@@ -39,7 +39,11 @@ public class HasMoneyState implements State {
     }
     
     public void insertDollar() {
-        updateMoneyState(Constants.DOLLAR);
+        if (gumballMachine.getMachine() == 3) {
+            updateMoneyState(Constants.DOLLAR);
+        } else {
+            System.out.println("Please insert a quarter");
+        }
     }
     
     public void ejectCoins() {
@@ -61,7 +65,7 @@ public class HasMoneyState implements State {
     public void dispense() {
         System.out.println("No gumball dispensed");
     }
-
+    
     public String toString() {
         if (gumballMachine.getMachine() != 3) {
             return "waiting for turn of crank";

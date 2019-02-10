@@ -15,7 +15,7 @@ public class NoMoneyState implements State {
     }
     
     public void insertNickel() {
-        if (gumballMachine.getMachine() == 3) {
+        if (gumballMachine.getMachine() == Constants.MACH_THREE) {
             updateMoneyState(Constants.NICKEL);
         } else {
             System.out.println("Please insert a quarter");
@@ -23,7 +23,7 @@ public class NoMoneyState implements State {
     }
     
     public void insertDime() {
-        if (gumballMachine.getMachine() == 3) {
+        if (gumballMachine.getMachine() == Constants.MACH_THREE) {
             updateMoneyState(Constants.DIME);
         } else {
             System.out.println("Please insert a quarter");
@@ -35,7 +35,7 @@ public class NoMoneyState implements State {
     }
     
     public void insertDollar() {
-        if (gumballMachine.getMachine() == 3) {
+        if (gumballMachine.getMachine() == Constants.MACH_THREE) {
             updateMoneyState(Constants.DOLLAR);
         } else {
             System.out.println("Please insert a quarter");

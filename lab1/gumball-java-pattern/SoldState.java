@@ -18,10 +18,6 @@ public class SoldState implements State {
         System.out.println("Please wait, we're already giving you a gumball");
     }
     
-    public void ejectQuarter() {
-        System.out.println("Sorry, you already turned the crank");
-    }
-    
     public void insertDollar() {
         System.out.println("Sorry, you already turned the crank");
     }
@@ -42,6 +38,11 @@ public class SoldState implements State {
             System.out.println("Oops, out of gumballs!");
             gumballMachine.setState(gumballMachine.getSoldOutState());
         }
+    }
+    
+    public void reset() {
+        System.out.println("Resetting to new machine");
+        ejectCoins();
     }
 
     public String toString() {

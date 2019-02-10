@@ -2,7 +2,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine(5,Constants.MACH_ONE);
+        GumballMachine gumballMachine = new GumballMachine(5,Constants.MACH_THREE);
     
         System.out.println(gumballMachine);
 
@@ -45,6 +45,18 @@ public class Main {
 	
 	gumballMachine.insertQuarter();
 	gumballMachine.turnCrank();
+	
+	gumballMachine.setMachine(Constants.MACH_TWO);
+	System.out.println(gumballMachine);
+	
+	gumballMachine.insertQuarter();
+	gumballMachine.insertDime();
+	gumballMachine.insertNickel();
+	gumballMachine.turnCrank();
+	gumballMachine.insertQuarter();
+	gumballMachine.turnCrank();
+	
+	System.out.println(gumballMachine);
 	
 	gumballMachine.refill(10);
 	

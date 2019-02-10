@@ -66,6 +66,11 @@ public class HasMoneyState implements State {
         System.out.println("No gumball dispensed");
     }
     
+    public void reset() {
+        System.out.println("Resetting to new machine");
+        ejectCoins();
+    }
+    
     public String toString() {
         if (gumballMachine.getMachine() != 3) {
             return "waiting for turn of crank";

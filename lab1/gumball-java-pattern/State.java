@@ -8,4 +8,5 @@ public interface State {
     public void ejectCoins();
     public void turnCrank();
     public void dispense();
+    public void reset();
 }

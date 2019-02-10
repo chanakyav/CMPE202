@@ -57,7 +57,12 @@ public class NoMoneyState implements State {
     
     public void dispense() {
         System.out.println("You need to pay first");
-    } 
+    }
+    
+    public void reset() {
+        System.out.println("Resetting to new machine");
+        ejectCoins();
+    }
 
     public String toString() {
         return "waiting for coins";

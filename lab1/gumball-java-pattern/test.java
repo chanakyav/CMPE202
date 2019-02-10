@@ -10,12 +10,15 @@ public class test {
         gumballMachine.insertQuarter();
         //gumballMachine.turnCrank();
         
+        //gumballMachine.setMachine(4);
         gumballMachine.setMachine(Constants.MACH_TWO);
 	System.out.println(gumballMachine);
 	
 	gumballMachine.insertQuarter();
 	gumballMachine.insertDime();
 	gumballMachine.insertNickel();
+	gumballMachine.turnCrank();
+	gumballMachine.insertQuarter();
 	gumballMachine.turnCrank();
 	
 	System.out.println(gumballMachine);

@@ -27,3 +27,7 @@
 |Notify customer regarding entry on to waitlist|      Customer |
 |Notify customer regarding available accommodation | Customer |
 |Notify waitlist of a customer's if they want to stop, leave, or confirm|Waitlist|
+
+### 2. Explanation
+
+The design pattern that was chosen to represent this design is **Mediator**. This behavioral design patterns fits well because the **_Notifier_** object acts as a mediator between the customer and the waitlist. At any point, the customer does not have to interact with the waitlist directly or vice versa. This promotes loose coupling and development of strong set of rules that both the customer and waitlist objects can interact with. The only job of the **_Notifier_** object is to relay messages therefore its role is a _ConcreteMediator_. The **_Customer_** and  **_Waitlist_** objects are _Colleagues_ since they only communicate through the mediator.
